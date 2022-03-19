@@ -1,4 +1,4 @@
-@import "../../scss/variable";
+@import "../../scss/variable", "../../scss/mixins";
 
 
 .navbar{
@@ -6,6 +6,7 @@
     display: flex;
     justify-content: space-evenly;
     background-color: $cardNavBgColor;
+    // padding: 0.3rem;
     // gap: 2rem;
     a{
         font-size: 2rem;
@@ -20,3 +21,28 @@
 
     }
 }  
+
+@include media-xsm{
+    .navbar{
+        flex-direction: column;
+        text-align: center;
+        a{
+            padding: 0.3rem;
+            &:last-child{
+                    margin-bottom: 1rem;
+            }
+        }
+    }
+}
+@include media-sm{
+    .navbar{
+        flex-direction: row;
+        a{
+            padding: 1.3rem;
+            &:last-child{
+                margin-bottom: 0rem;
+        }
+            
+        }
+    }
+}
